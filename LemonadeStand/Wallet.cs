@@ -10,7 +10,8 @@ namespace LemonadeStand
     {
         // MEMBER VARIABLES (HAS A...)
 
-        public double money;
+        public double Money;
+        private double money;
 
         // CONSTRUCTOR 
         public Wallet()
@@ -22,4 +23,5 @@ namespace LemonadeStand
 
 
     }
+    
 }
