@@ -8,5 +8,20 @@ namespace LemonadeStand
 {
     class Inventory
     {
+        // MEMBER VARIABLES (HAS A...)
+
+        public List<int> lemons;
+        public List<int> iceCubes;
+        public List<int> sugarCubes;
+
+        // CONSTRUCTOR
+        public Inventory()
+        {
+
+        }
+
+        // MEMBER METHODS (CAN DO...)
+
+
     }
 }

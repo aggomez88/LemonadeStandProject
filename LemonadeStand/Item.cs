@@ -8,5 +8,17 @@ namespace LemonadeStand
 {
     abstract class Item
     {
+        // MEMBER VARIABLES (HAS A...)
+        string name;
+
+        // CONSTRUCTOR
+        public Item()
+        {
+
+        }
+
+        // MEMBER METHODS (CAN DO...)
+
+
     }
 }
