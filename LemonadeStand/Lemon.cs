@@ -8,5 +8,16 @@ namespace LemonadeStand
 {
     class Lemon : Item
     {
+        // Member Variables
+
+        // Constructor 
+        public Lemon()
+        {
+            this.name = "Lemon";
+        }
+
+        // Member Methods
+
+        // public override void [Method Name]
     }
 }

@@ -8,5 +8,21 @@ namespace LemonadeStand
 {
     class Day
     {
+        // Member variables
+        public Weather weather;
+        public List<Customer> customers;
+        // Constructor
+        public Day()
+        {
+            weather = new Weather();
+            customers = new List<Customer>();
+
+        }
+
+        // Member methods
+
+          
+
+
     }
 }

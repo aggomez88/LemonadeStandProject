@@ -8,5 +8,16 @@ namespace LemonadeStand
 {
     class SugarCube : Item
     {
+        // Member Variables
+
+        // Constructor 
+        public SugarCube()
+        {
+            this.name = "Sugar Cube";
+        }
+
+        // Member Methods
+
+        // public override void [Method Name]
     }
 }
