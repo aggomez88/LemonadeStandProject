@@ -8,5 +8,16 @@ namespace LemonadeStand
 {
     class Store
     {
+        double pricePerLemon = .48;
+        double pricePerSugarCube = .01;
+        double pricePerIceCube = .01;
+        double pricePerCup = .04;
+
+
+        public Store()
+        {
+
+            List<double> groceryStoreItemsList = new List<double> {pricePerLemon,pricePerSugarCube,pricePerIceCube,pricePerCup};
+        }
     }
 }
