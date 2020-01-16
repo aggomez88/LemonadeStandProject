@@ -9,6 +9,7 @@ namespace LemonadeStand
     class Customer
     {
 
+
         //Member Variables (HAS A)
 
         //Constructor
@@ -19,5 +20,8 @@ namespace LemonadeStand
 
 
 
+
+       
+        
     }
 }
