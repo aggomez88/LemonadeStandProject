@@ -10,6 +10,7 @@ namespace LemonadeStand
     {
         // MEMBER VARIABLES (HAS A...)
         public string name;
+        
 
 
         // CONSTRUCTOR

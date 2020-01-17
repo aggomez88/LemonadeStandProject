@@ -11,7 +11,8 @@ namespace LemonadeStand
         static void Main(string[] args)
         {
             Inventory inventory = new Inventory();
-            inventory.statusInventoryList();
+            //inventory.statusInventoryList();
+            Weather weather = new Weather();
             Console.ReadLine();
         }
     }

@@ -6,24 +6,15 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Player
+    public class Player
     {
         public string name;
-        Inventory inventory;
-        Wallet wallet;
-        Recipe recipe;
-        Pitcher pitcher;
+        Inventory inventory;//       Wallet wallet;
+        Recipe recipe;//
+        Pitcher pitcher;//
 
 
         public Player(string name)
         {
             this.name = name;
             
-
-
-        }
-
-
-
-    }
-}

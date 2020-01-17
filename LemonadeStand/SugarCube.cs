@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class SugarCube : Item
+    public class SugarCube : Item
     {
         // Member Variables
 
@@ -18,10 +18,10 @@ namespace LemonadeStand
 
         // Member Methods
 
-        public override void SugarRemaining
-        {
+        //public override void SugarRemaining()
+        //{
 
-        }
+        //}
 
 
     }
