@@ -8,7 +8,20 @@ namespace LemonadeStand
 {
     class Customer
     {
-        string name;
+
+
+        //Member Variables (HAS A)
+
+        //Constructor
+
+        //Member Methods (CAN DO)
+
+
+
+
+
+
+       
         
     }
 }

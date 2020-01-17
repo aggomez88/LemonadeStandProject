@@ -9,7 +9,8 @@ namespace LemonadeStand
     abstract class Item
     {
         // MEMBER VARIABLES (HAS A...)
-        string name;
+        public string name;
+
 
         // CONSTRUCTOR
         public Item()
@@ -18,6 +19,7 @@ namespace LemonadeStand
         }
 
         // MEMBER METHODS (CAN DO...)
+
 
 
 
