@@ -19,5 +19,20 @@ namespace LemonadeStand
 
             List<double> groceryStoreItemsList = new List<double> {pricePerLemon,pricePerSugarCube,pricePerIceCube,pricePerCup};
         }
+
+        public void SellLemons(Player player)
+        {
+            Console.WriteLine("How many Lemons would you like to purchase?");
+            int userInput = Convert.ToInt32(Console.ReadLine());
+
+
+            player.wallet.Money -= pricePerLemon * userInput;
+
+            player.inventory.lemons += userInput;  
+
+          
+        }
+
+
     }
 }
