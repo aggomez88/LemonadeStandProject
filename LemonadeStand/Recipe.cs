@@ -23,30 +23,35 @@ namespace LemonadeStand
         // CONSTRUCTOR 
         public Recipe()
         {
-            amountOfLemons = 0;
-            amountOfIceCubes = 0;
-            amountOfSugar = 0;
-            pricePerCup = 0;
+            amountOfLemons = 3;
+            amountOfIceCubes = 3;
+            amountOfSugar = 5;
+            pricePerCup = .25;
         }
 
         // MEMBER METHODS (CAN DO...)
 
-        public void AddLemons(int amountOfLemonsToAdd) //for loop
-        {
-            this.lemonList.Add(new Lemon());
-        }
+        //public void AddLemons(int amountOfLemonsToAdd) //use 'for loop' but also connect to pitcher --> HOW?
+        //{
+        //    this.lemonList.Add(new Lemon());
+        //}
 
-        public void AddSugar(int amountOfSugarToAdd)
-        {
-            this.sugarCubeList.Add(new SugarCube());
-        }
-        public void AddIce(int amountOfIceToAdd)
-        {
-            this.iceCubeList.Add(new IceCube());
-            {
+        //public void AddSugar(int amountOfSugarToAdd)
+        //{
+        //    this.sugarCubeList.Add(new SugarCube());
+        //}
+        //public void AddIce(int amountOfIceToAdd)
+        //{
+        //    this.iceCubeList.Add(new IceCube());
+        //    {
 
-            }
+        //    }
 
-        }    
+        //}
+        //public void CreateRecipe()
+        //{
+
+        //}
+
     }
 }
