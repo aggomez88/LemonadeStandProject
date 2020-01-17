@@ -11,6 +11,7 @@ namespace LemonadeStand
         // Member variables
         public Weather weather;
         public List<Customer> customers;
+
         // Constructor
         public Day()
         {

@@ -18,6 +18,11 @@ namespace LemonadeStand
 
         // Member Methods
 
-        // public override void [Method Name]
+        public override void SugarRemaining
+        {
+
+        }
+
+
     }
 }

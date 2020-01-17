@@ -11,14 +11,24 @@ namespace LemonadeStand
         // MEMBER VARIABLES (HAS A...)
 
         public int cupsLeftInPitcher;
+        Recipe recipeList = new Recipe();
 
         // CONSTRUCTOR
         public Pitcher()
         {
-
+            cupsLeftInPitcher = 0;
         }
 
         // MEMBER METHODS (CAN DO...)
+
+        public void AmountLeftInPitcher()
+        {
+            if ()
+            {
+
+            }
+        }
+
 
 
     }
