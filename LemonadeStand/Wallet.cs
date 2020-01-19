@@ -6,28 +6,15 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Wallet
+    public class Wallet
     {
-        // MEMBER VARIABLES (HAS A...)
+        public double Money { get; set; } = 20;
 
-        private double money = 20;
-        public double Money
-        {
-            get
-            {
-                return money;
-            }
-            set
-            {
-                money = value;
-            }
-        }
-        
 
         // CONSTRUCTOR 
         public Wallet()
         {
-
+            Money = 20;
         }
 
         // MEMBER METHODS (CAN DO...)

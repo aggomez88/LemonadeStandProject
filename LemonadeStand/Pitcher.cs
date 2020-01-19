@@ -27,11 +27,11 @@ namespace LemonadeStand
         
         public void DeductInventory(Recipe recipe, Inventory inventory)
         {
-            inventory.lemonList.RemoveRange(0, recipe.amountOfLemons);
-            inventory.sugarCubeList.RemoveRange(0, recipe.amountOfSugar);
-            inventory.iceCubeList.RemoveRange(0, recipe.amountOfIceCubes);
+            inventory.lemons.RemoveRange(0, recipe.amountOfLemons);
+            inventory.sugarCubes.RemoveRange(0, recipe.amountOfSugar);
+            inventory.iceCubes.RemoveRange(0, recipe.amountOfIceCubes);
 
-            while (inventory.lemonList > 0 && recipe.amountOfLemons > 0)
+            while (inventory.lemons > 0 && recipe.amountOfLemons > 0)
             {
 
             }

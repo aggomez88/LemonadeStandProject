@@ -26,5 +26,14 @@ namespace LemonadeStand
         {
             groceryStore.RunGroceryShoppingSim();
         }
+
+        public void GameOver()
+        {
+            if (player1.wallet.Money <= 0) 
+            {
+                Console.WriteLine("Game Over");
+            }
+
+        }
     }
 }

@@ -61,7 +61,7 @@ namespace LemonadeStand
             this.recipe = recipe;
             Random random = new Random();
             TemperaturePreference = random.Next(55, 95);  // Set method on the TemperaturePreference Property
-            CostPerCupPreference = random.NextDouble();// will pick a number between .00 and 1.00 only
+            CostPerCupPreference = random.NextDouble();   // will pick a number between .00 and 1.00 only
             RecepiePreference();
         }
 
