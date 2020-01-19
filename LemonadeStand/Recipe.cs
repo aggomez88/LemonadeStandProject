@@ -15,6 +15,10 @@ namespace LemonadeStand
         public int amountOfIceCubes;
         public double pricePerCup;
 
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 822ff05066f4797c068114a7822b7490baf49819
 
         // CONSTRUCTOR 
         public Recipe()

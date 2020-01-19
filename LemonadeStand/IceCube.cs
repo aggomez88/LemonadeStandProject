@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class IceCube : Item
+    public class IceCube : Item
     {
         // Member Variables
 
@@ -14,6 +14,7 @@ namespace LemonadeStand
         public IceCube()
         {
             this.name = "Ice Cube";
+            
         }
 
         // Member Methods
