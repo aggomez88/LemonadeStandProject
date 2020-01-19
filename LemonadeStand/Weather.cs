@@ -13,11 +13,7 @@ namespace LemonadeStand
         public string predictedForecast;
         List<string> dailyWeatherConditionsList = new List<string> { "Cloudy", "Rainy", "Sunny" };
 
-        public Weather()
-        {
-            predictedForecast = GenerateDailyTemp() + GenerateDailyWeatherCondition();
-
-        }
+    
 
         public int GenerateDailyTemp()
         {
@@ -25,7 +21,6 @@ namespace LemonadeStand
             temperature = random.Next(55,95);
 
             return temperature;
-
           
         }
 

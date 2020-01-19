@@ -15,10 +15,6 @@ namespace LemonadeStand
         public int amountOfIceCubes;
         public double pricePerCup;
 
-        public List<Lemon> lemonList;
-        public List<IceCube> iceCubeList;
-        public List<Cup> cupsList;
-        public List<SugarCube> sugarCubeList;
 
         // CONSTRUCTOR 
         public Recipe()

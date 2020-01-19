@@ -31,7 +31,7 @@ namespace LemonadeStand
             int userInput = Convert.ToInt32(Console.ReadLine());
 
 
-            player.wallet.Money -= pricePerLemon * userInput;
+            
 
             if (player.wallet.Money < pricePerLemon * userInput)
             {
@@ -39,21 +39,63 @@ namespace LemonadeStand
             }
             else
             {
+                player.wallet.Money -= pricePerLemon * userInput;
                 player.inventory.AddLemons(userInput); 
-            }
+            }          
 
-            
-        
-
-
-
-
-
-            
-
-          
         }
 
+        public void SellSugarCubes()
+        {
+            Console.WriteLine("How many Sugar Cubes would you like to purchase?");
+            int userInput = Convert.ToInt32(Console.ReadLine());
 
+
+
+
+            if (player.wallet.Money < pricePerSugarCube * userInput)
+            {
+                NotEnoughFunds();
+            }
+            else
+            {
+                player.wallet.Money -= pricePerSugarCube * userInput;
+                player.inventory.AddSugarCubes(userInput);
+            }
+        }
+
+        public void SellCups()
+        {
+            Console.WriteLine("How many Cups would you like to purchase?");
+            int userInput = Convert.ToInt32(Console.ReadLine());
+
+
+            if (player.wallet.Money < pricePerCup * userInput)
+            {
+                NotEnoughFunds();
+            }
+            else
+            {
+                player.wallet.Money -= pricePerCup * userInput;
+                player.inventory.AddDrinkingCups(userInput);
+            }
+        }
+
+        public void SellIceCubes()
+        {
+            Console.WriteLine("How many Ice Cubes would you like to purchase?");
+            int userInput = Convert.ToInt32(Console.ReadLine());
+
+
+            if (player.wallet.Money < pricePerIceCube * userInput)
+            {
+                NotEnoughFunds();
+            }
+            else
+            {
+                player.wallet.Money -= pricePerIceCube * userInput;
+                player.inventory.AddIceCubes(userInput);
+            }
+        }
     }
 }

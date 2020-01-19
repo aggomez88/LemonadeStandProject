@@ -10,17 +10,16 @@ namespace LemonadeStand
     {
         // MEMBER VARIABLES (HAS A...)
 
-        public List<Lemon> lemonList;
-        public List<IceCube> iceCubeList;
-        public List<SugarCube> sugarCubeList;
-        public List<Cup> drinkingCupList;
+        public List<Lemon> lemons;
+        public List<IceCube> iceCubes;
+        public List<SugarCube> sugarCubes;
+        public List<Cup> drinkingCups;
 
         
 
         // CONSTRUCTOR
         public Inventory()
         {
-<<<<<<< HEAD
             lemons = new List<Lemon>();
             iceCubes = new List<IceCube>();
             sugarCubes = new List<SugarCube>();
@@ -35,14 +34,6 @@ namespace LemonadeStand
             {
                 lemons.Add(new Lemon());
             } 
-=======
-            lemonList = new List<Lemon>();
-            iceCubeList = new List<IceCube>();
-            sugarCubeList = new List<SugarCube>();
-            drinkingCupList = new List<Cup>();
-
-
->>>>>>> cef50463100f9b887d926fedc7cad928ea4c6506
 
         }
 
@@ -69,10 +60,7 @@ namespace LemonadeStand
                 drinkingCups.Add(new Cup());
             }
         }
-        
-
-        // MEMBER METHODS (CAN DO...)
-        
+     
 
     }
 }
