@@ -13,7 +13,13 @@ namespace LemonadeStand
         public string predictedForecast;
         List<string> dailyWeatherConditionsList = new List<string> { "Cloudy", "Rainy", "Sunny" };
 
-    
+
+        public Weather()
+        {
+            GenerateDailyTemp();
+            GenerateDailyWeatherCondition();
+                
+        }
 
         public int GenerateDailyTemp()
         {

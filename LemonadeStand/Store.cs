@@ -20,6 +20,14 @@ namespace LemonadeStand
             List<double> groceryStoreItemsList = new List<double> {pricePerLemon,pricePerSugarCube,pricePerIceCube,pricePerCup};
         }
 
+        public void RunGroceryShoppingSim()
+        {
+            SellCups();
+            SellIceCubes();
+            SellSugarCubes();
+            SellLemons();
+        }
+
         public void NotEnoughFunds()
         {
             Console.WriteLine("Not enough funds! Select another quantity.");

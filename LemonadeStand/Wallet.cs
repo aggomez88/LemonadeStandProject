@@ -10,17 +10,28 @@ namespace LemonadeStand
     {
         // MEMBER VARIABLES (HAS A...)
 
-        public double Money;
-        private double money;
+        private double money = 20;
+        public double Money
+        {
+            get
+            {
+                return money;
+            }
+            set
+            {
+                money = value;
+            }
+        }
+        
 
         // CONSTRUCTOR 
         public Wallet()
         {
-            Money = 20;
+
         }
 
         // MEMBER METHODS (CAN DO...)
-
+        
 
     }
     
