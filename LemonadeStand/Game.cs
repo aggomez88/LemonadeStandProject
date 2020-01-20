@@ -9,7 +9,7 @@ namespace LemonadeStand
     class Game
     {
         public Player player1;
-        public List<Day> Days;
+        public List<Day> days;
         public Store groceryStore;
         int dayCounter { get; set; } = 7;
      
@@ -17,7 +17,7 @@ namespace LemonadeStand
         public Game()
         {
             player1 = new Player("Paul");
-            Days = new List<Day>();
+            days = new List<Day>();
             groceryStore = new Store(player1);
             
 
@@ -38,6 +38,7 @@ namespace LemonadeStand
 
         public void PlayerMenu()
         {
+            
             Console.WriteLine("What would you like to do today? Choosing by entering number: \n1) Create a recipe \n2)Go to the store\n 3) Open your stand for the day");
             string menuInput = Console.ReadLine();
 
@@ -51,7 +52,16 @@ namespace LemonadeStand
             }
             else if (menuInput == "3")
             {
-                CycleDay();
+                if (player1.inventory.lemons.Count >= 1 && player1.inventory.sugarCubes.Count >= 1 && player1.inventory.iceCubes.Count >= 1 && player1.inventory.drinkingCups.Count >= 1)
+                {
+                    CycleDay();
+                }
+                else
+                {
+                    Console.WriteLine("Your inventory is low, you need to hit the store.");
+                    groceryStore.RunGroceryShoppingSim();
+                }
+                
             }
             else
             {
@@ -64,10 +74,6 @@ namespace LemonadeStand
         {
             for (int i = 0; i < dayCounter; i++)
             {
-                // step 1 weather forecast
-                // step 2 choose recepie (save for later implementation)
-                // step 3 grocery shop
-                // step 4 EOD totals
 
 
 
