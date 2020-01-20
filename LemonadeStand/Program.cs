@@ -10,9 +10,12 @@ namespace LemonadeStand
     {
         static void Main(string[] args)
         {
-            Inventory inventory = new Inventory();
-            //inventory.statusInventoryList();
-            Weather weather = new Weather();
+            Day day1 = new Day();
+
+
+
+
+            Console.WriteLine(day1.weather.dailyTemperature + day1.weather.dailyCondition);
             Console.ReadLine();
         }
     }

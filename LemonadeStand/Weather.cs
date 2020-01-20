@@ -8,25 +8,24 @@ namespace LemonadeStand
 {
     class Weather
     {
-        public string condition;
-        public int temperature;
-        public string predictedForecast;
+        public string dailyCondition;
+        public int dailyTemperature;
         List<string> dailyWeatherConditionsList = new List<string> { "Cloudy", "Rainy", "Sunny" };
 
 
         public Weather()
         {
-            GenerateDailyTemp();
-            GenerateDailyWeatherCondition();
-                
+            dailyTemperature = GenerateDailyTemp();
+            dailyCondition = GenerateDailyWeatherCondition();
+                   
         }
 
         public int GenerateDailyTemp()
         {
             Random random = new Random();
-            temperature = random.Next(55,95);
+            dailyTemperature = random.Next(55,95);
 
-            return temperature;
+            return dailyTemperature;
           
         }
 
@@ -36,9 +35,9 @@ namespace LemonadeStand
             Random random = new Random();
             int conditionGenetrated = random.Next(0,3);
 
-            condition = dailyWeatherConditionsList[conditionGenetrated];
+            dailyCondition = dailyWeatherConditionsList[conditionGenetrated];
 
-            return condition;
+            return dailyCondition;
         }
 
     }

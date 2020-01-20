@@ -78,15 +78,15 @@ namespace LemonadeStand
         {
             Random random = new Random();
             int randomValue = random.Next(1, 100);
-            if (weather.condition == "Sunny" && randomValue > 10)
+            if (weather.dailyCondition == "Sunny" && randomValue > 10)
             {
                     return true;
             }
-            else if (weather.condition == "Rainy" && randomValue < 30)
+            else if (weather.dailyCondition == "Rainy" && randomValue < 30)
             {
                     return true;
             }
-            else if (weather.condition == "cloudy" && randomValue >= 50)
+            else if (weather.dailyCondition == "cloudy" && randomValue >= 50)
             {
                     return true;
             }
@@ -99,7 +99,7 @@ namespace LemonadeStand
 
         public bool MakeDecisionToPurchaseLemonade()
         {
-            if (weather.temperature >= TemperaturePreference && DecideWeatherCondition() && recipe.pricePerCup <= CostPerCupPreference && recipe.amountOfIceCubes >= iceCubePreference && recipe.amountOfLemons >= lemonPreference && recipe.amountOfSugar >= sugarCubePref )
+            if (weather.dailyTemperature >= TemperaturePreference && DecideWeatherCondition() && recipe.pricePerCup <= CostPerCupPreference && recipe.amountOfIceCubes >= iceCubePreference && recipe.amountOfLemons >= lemonPreference && recipe.amountOfSugar >= sugarCubePref )
             {
                 return true;
             }
