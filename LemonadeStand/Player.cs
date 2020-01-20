@@ -9,13 +9,11 @@ namespace LemonadeStand
     public class Player
     {
         public string name;
-        
+        public Recipe recipe;
+        public Pitcher pitcher;
         public Wallet wallet;
-
-        public Inventory inventory = new Inventory();
-        
-        Recipe recipe = new Recipe();
-        Pitcher pitcher = new Pitcher();
+        public Inventory inventory;
+       
 
 
 
@@ -23,6 +21,9 @@ namespace LemonadeStand
         {
             this.name = name;
             wallet = new Wallet();
+            recipe = new Recipe();
+            pitcher = new Pitcher();
+            inventory = new Inventory();
 
         }
     }

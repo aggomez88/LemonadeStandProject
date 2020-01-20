@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Pitcher
+    public class Pitcher
     {
         // MEMBER VARIABLES (HAS A...)
         public int cupsToMakePitcher;
@@ -14,7 +14,7 @@ namespace LemonadeStand
 
 
         // CONSTRUCTOR
-        public Pitcher()
+        public  Pitcher()
         {
             cupsLeftInPitcher = 0;
         }

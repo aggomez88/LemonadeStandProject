@@ -15,9 +15,13 @@ namespace LemonadeStand
 
         public Weather()
         {
-            dailyTemperature = GenerateDailyTemp();
-            dailyCondition = GenerateDailyWeatherCondition();
                    
+        }
+
+        public void DisplayWeather()
+        {
+            Console.WriteLine($"Temperature: " + (dailyTemperature) + "\nCondition: " + (dailyCondition));
+            Console.ReadLine();
         }
 
         public int GenerateDailyTemp()

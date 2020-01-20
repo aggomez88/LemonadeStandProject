@@ -17,7 +17,7 @@ namespace LemonadeStand
         public Store(Player player)
         {
             this.player = player;
-            List<double> groceryStoreItemsList = new List<double> {pricePerLemon,pricePerSugarCube,pricePerIceCube,pricePerCup};
+            List<double> groceryStoreItemsList = new List<double> {pricePerLemon,pricePerSugarCube,pricePerIceCube,pricePerCup};    
         }
 
         public void RunGroceryShoppingSim()
