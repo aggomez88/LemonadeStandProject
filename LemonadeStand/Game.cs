@@ -12,14 +12,12 @@ namespace LemonadeStand
         public List<Day> Days;
         public Store groceryStore;
 
-        
+
         public Game()
         {
-            player1 = new Player();
+            player1 = new Player("Steve");
             Days = new List<Day>();
             groceryStore = new Store(player1);
-            
-
         }
 
         public void RunGame()
@@ -29,10 +27,25 @@ namespace LemonadeStand
 
         public void GameOver()
         {
-            if (player1.wallet.Money <= 0) 
+            if (player1.wallet.Money <= 0)
             {
                 Console.WriteLine("Game Over");
             }
+        }
+
+        public void Profits()
+        {
+            double calculateDailyEarnings = DailyEarnings();
+            double calculateEndOfGameEarnings = dailyEarnings - player.wallet.Money;
+
+        }
+        public double DailyEarnings()
+        {
+            double dailyEarnings = store.pricePerCup * customerPurchaseCount;
+            return dailyEarnings;
+        }
+        public void EndOfDdayTotal()
+        {
 
         }
     }
