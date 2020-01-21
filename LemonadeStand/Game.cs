@@ -11,16 +11,16 @@ namespace LemonadeStand
         // HAS A
         public Player player1;
         public List<Day> days;
+        public Day day;
 
-        public int currentDay = 0;
+        public int currentDay = 0; //INCREMENT BY ONE (++)
 
         public Store groceryStore;
-        public Store store;
-        public Recipe recipe;
         public Customer customer;
         public Weather weather;
         int dayCounter { get; set; } = 7;
         public double startingMoney;
+        public double dailyEarnings;
 
 
         public Game()
@@ -30,12 +30,29 @@ namespace LemonadeStand
             groceryStore = new Store(player1);
 
             AddNewDayToList();
-            this.customer = new Customer(recipe, weather);
+            this.customer = new Customer(player1.recipe, weather);
+        }
+        public void GreetUser()
+        {
+            string userInput = Console.ReadLine().ToLower();
+
+            Console.WriteLine("Welcome to your lemonade stand. Here's how it works...");
+            Console.WriteLine("You have $20.00 to start.  Go to the store and stock your inventory.");
+            Console.WriteLine("Choose how much of each item to add to your recipe and set your price, then go hit the street...Good Luck!");
+            Console.WriteLine("Hit any key to continue...");
+            userInput = Console.ReadLine();
+        }
+        public void RunSingleDay()//have a method that runs a single day:
+        {
+            GreetUser();
+            weather.DisplayWeather();
+            player1.recipe.DeclareDailyRecipie();
+            Console.WriteLine(player1.wallet.Money);
         }
 
         public void AddNewDayToList()
         {
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < dayCounter; i++)
             {
                 days.Add(new Day());
                 Console.WriteLine(i);
@@ -53,7 +70,7 @@ namespace LemonadeStand
             //days += 1;
         }
 
-        
+
         public void CycleDay()
         {
             for (int i = 0; i < dayCounter; i++)
@@ -62,13 +79,36 @@ namespace LemonadeStand
                 Console.WriteLine(i);
             }
         }
-        public void RunGame()
+        public void RunGame()   
         {
-
-            groceryStore.RunGroceryShoppingSim();   
+            //Welcome message & display rules
+            //Instantiate day
+            //Populate customers in day
+            //Generate weather temp and forecast in day
+            //Use and/or make recipe to use
+            //Populate inventory with lemons, ice, sugar, cups
+            //Player sets price for cup
+            //Sell lemonade
+            //Display end of day totals
+            GreetUser();
+            for (int i = 0; i < dayCounter; i++)
+            {
+                if(player1.wallet.Money >= 0)
+                {
+                    days.Add(new Day());
+                    //generate customers
+                    //generate weather
+                    groceryStore.RunGroceryShoppingSim();
+                    player1.recipe.DeclareDailyRecipie();
+                    days[i].SellLemonade(player1);
+                    Profits();
+                }
+                
+            }
+            
                                                   
 
-            Console.WriteLine("Welcome to Lemonade Stand.");
+            
 
             PlayerMenu();
         }
@@ -108,10 +148,11 @@ namespace LemonadeStand
         }
         public double Profits()
         {
-            double dailyEarnings;
+            double dailyEarnings; //if daily earning
+            
 
-            double calculateDailyEarnings = player1.recipe.pricePerCup * customer.makeDecisionToPurchase;
-            double calculateEndOfGameEarnings = calculateDailyEarnings - player1.wallet.Money;
+            double calculateDailyEarnings = player1.recipe.pricePerCup * customer.CostPerCupPreference;
+            double calculateEndOfGameEarnings = calculateDailyEarnings - player1.wallet.Money;  //player.wallet.money - 20 (starting money) = FINAL WEEKS EARNINGS
             return calculateEndOfGameEarnings;
 
             return 0;
@@ -122,6 +163,11 @@ namespace LemonadeStand
             if (customer.makeDecisionToPurchase == true)
             {
                 player1.wallet.Money += player1.recipe.pricePerCup;
+                return 0;
+            }
+            else
+            {
+                return 0;
             }
             //double dailyEarnings = customer.makeDecisionToPurchase * player1.recipe.pricePerCup;
             //return dailyEarnings;

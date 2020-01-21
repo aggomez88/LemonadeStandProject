@@ -21,6 +21,28 @@ namespace LemonadeStand
             customers = new List<Customer>();
 
         }
+        public void SellLemonade(Player player)
+        {
+            CustomersDecide();
+            CustomersPurchase(player);
+        }
+        public void CustomersDecide()
+        {
+            for (int i = 0; i < customers.Count; i++)
+            {
+                customers[i].MakeDecisionToPurchaseLemonade();
+            }
+        }
+        public void CustomersPurchase(Player player)
+        {
+            for (int i = 0; i < customers.Count; i++)
+            {
+                if(customers[i].makeDecisionToPurchase == true)
+                {
+                    player.wallet.Money += player.recipe.pricePerCup;
+                }
+            }
+        }
     }
 
 }

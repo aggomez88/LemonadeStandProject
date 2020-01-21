@@ -22,8 +22,8 @@ namespace LemonadeStand
         }
         public void DeclareDailyRecipie()
         {
-            bool isValid = false;
-            while (isValid == false)
+            bool isValid = true;
+            while (isValid)
             {
                 if (amountOfLemons >= 0 || amountOfLemons <= 9 && amountOfSugar >= 0 || amountOfSugar <= 9 && amountOfIceCubes >= 0 || amountOfIceCubes <= 9 && pricePerCup >= 0 || pricePerCup <= 1 )
                 {
@@ -40,9 +40,14 @@ namespace LemonadeStand
                     Console.WriteLine("Choose cost per cup: (0.01 - 1 ");
                     pricePerCup = Convert.ToDouble(Console.ReadLine());
 
-                    isValid = true;
+                    isValid = false;
 
                 }
+                else
+                {
+                    continue;
+                }
+
             }
             
         }

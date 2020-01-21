@@ -15,6 +15,8 @@ namespace LemonadeStand
             ////inventory.statusInventoryList();
             //Weather weather = new Weather();
             Game game = new Game();
+            game.RunSingleDay();
+
             game.AddNewDayToList();
             game.RunGame();
             game.NewDay();

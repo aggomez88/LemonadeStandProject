@@ -98,22 +98,21 @@ namespace LemonadeStand
         }
         
 
-        public bool MakeDecisionToPurchaseLemonade()
+        public void MakeDecisionToPurchaseLemonade()
         {
 
             if (weather.dailyTemperature >= TemperaturePreference && DecideWeatherCondition() && recipe.pricePerCup <= CostPerCupPreference && recipe.amountOfIceCubes >= iceCubePreference && recipe.amountOfLemons >= lemonPreference && recipe.amountOfSugar >= sugarCubePref )
             {
-                
-                return true;
+
+                makeDecisionToPurchase =  true;
 
             }
             else 
             {
-                return false;
+                makeDecisionToPurchase =  false;
             }
-
-
         }
+        
        
         
     }
