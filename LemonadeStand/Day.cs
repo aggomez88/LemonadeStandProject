@@ -22,6 +22,7 @@ namespace LemonadeStand
 
         }
 
+
         public double DailyEarnings(Player player)
         {
             double dailyEarnings = player.wallet.Money - startingMoney;
@@ -32,11 +33,10 @@ namespace LemonadeStand
 
         }
 
-        // Member methods
-
 
 
 
 
     }
+
 }

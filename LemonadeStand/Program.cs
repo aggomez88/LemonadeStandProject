@@ -10,6 +10,7 @@ namespace LemonadeStand
     {
         static void Main(string[] args)
         {
+
             //Inventory inventory = new Inventory();
             ////inventory.statusInventoryList();
             //Weather weather = new Weather();
@@ -17,6 +18,7 @@ namespace LemonadeStand
             game.RunGame();
             game.NewDay();
             Console.ReadLine();
+
         }
     }
 }
