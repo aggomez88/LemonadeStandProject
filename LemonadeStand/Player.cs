@@ -22,8 +22,9 @@ namespace LemonadeStand
         public Player(string name)
         {
             this.name = name;
-            wallet = new Wallet();
-
+            this.wallet = new Wallet();
+            this.recipe = new Recipe();
+            this.pitcher = new Pitcher();
         }
     }
 }

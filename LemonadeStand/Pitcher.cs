@@ -14,7 +14,7 @@ namespace LemonadeStand
 
 
         // CONSTRUCTOR
-        public Pitcher(Recipe recipe)
+        public Pitcher()
         {
             cupsLeftInPitcher = 0;
         }
@@ -31,7 +31,7 @@ namespace LemonadeStand
             inventory.sugarCubes.RemoveRange(0, recipe.amountOfSugar);
             inventory.iceCubes.RemoveRange(0, recipe.amountOfIceCubes);
 
-            while (inventory.lemons > 0 && recipe.amountOfLemons > 0)
+            while (inventory.lemons.Count > 0 && recipe.amountOfLemons > 0)
             {
 
             }
