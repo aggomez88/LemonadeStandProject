@@ -12,7 +12,6 @@ namespace LemonadeStand
         {
 
             
-            Console.ReadLine();
 
         }
     }

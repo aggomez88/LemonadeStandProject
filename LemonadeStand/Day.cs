@@ -11,6 +11,10 @@ namespace LemonadeStand
         // Member variables
         public Weather weather;
         public List<Customer> customers;
+        public int randomValue;
+        public Player player;
+      
+
 
         
 
@@ -19,8 +23,35 @@ namespace LemonadeStand
         {
             weather = new Weather();
             customers = new List<Customer>();
+            
+            GenerateCustomers();
+        }
+
+        public void GenerateCustomers()
+        {
+            Random random = new Random();
+            randomValue = random.Next(1, 50);
+
+            if (weather.dailyCondition == "Sunny") 
+            {
+                randomValue += 50;
+            }
+            else if (weather.dailyCondition == "Rainy") 
+            {
+                randomValue += 10;
+            }
+            else if (weather.dailyCondition == "Cloudy") 
+            {
+                randomValue += 25;
+            }
+
+            for (int i = 0; i < randomValue; i++)
+            {
+                customers.Add(new Customer(player.recipe, weather));
+            }
 
         }
+
         public void SellLemonade(Player player)
         {
             CustomersDecide();
@@ -43,16 +74,7 @@ namespace LemonadeStand
                 }
             }
         }
-        public void GenerateCustomers()
-        {
-            for (int i = 0; i < customers.Count; i++)
-            {
-                if (customers[i].)
-                {
 
-                }
-            }
-        }
     }
 
 }

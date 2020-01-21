@@ -17,7 +17,8 @@ namespace LemonadeStand
 
         public  Pitcher()
 
-        {
+        { 
+
             cupsLeftInPitcher = 0;
         }
 

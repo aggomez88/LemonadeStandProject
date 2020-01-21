@@ -64,6 +64,7 @@ namespace LemonadeStand
             TemperaturePreference = random.Next(55, 95);  // Set method on the TemperaturePreference Property
             CostPerCupPreference = random.NextDouble();   // will pick a number between .00 and 1.00 only
             RecepiePreference();
+            MakeDecisionToPurchaseLemonade();
         }
 
         public void RecepiePreference()
@@ -76,6 +77,7 @@ namespace LemonadeStand
         }
 
         public bool DecideWeatherCondition()
+
         {
             Random random = new Random();
             int randomValue = random.Next(1, 100);
@@ -101,7 +103,11 @@ namespace LemonadeStand
         public void MakeDecisionToPurchaseLemonade()
         {
 
+            if (weather.dailyTemperature >= TemperaturePreference && recipe.pricePerCup <= CostPerCupPreference && recipe.amountOfIceCubes >= iceCubePreference && recipe.amountOfLemons >= lemonPreference && recipe.amountOfSugar >= sugarCubePref )
+
+
             if (weather.dailyTemperature >= TemperaturePreference && DecideWeatherCondition() && recipe.pricePerCup <= CostPerCupPreference && recipe.amountOfIceCubes >= iceCubePreference && recipe.amountOfLemons >= lemonPreference && recipe.amountOfSugar >= sugarCubePref )
+
             {
 
                 makeDecisionToPurchase =  true;
