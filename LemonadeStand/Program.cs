@@ -11,9 +11,15 @@ namespace LemonadeStand
         static void Main(string[] args)
         {
 
+            //Inventory inventory = new Inventory();
+            ////inventory.statusInventoryList();
+            //Weather weather = new Weather();
+            Game game = new Game();
+            game.AddNewDayToList();
+            game.RunGame();
+            game.NewDay();
+            Console.ReadLine();
 
-
-            
         }
     }
 }

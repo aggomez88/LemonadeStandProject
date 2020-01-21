@@ -12,6 +12,7 @@ namespace LemonadeStand
         Recipe recipe = new Recipe();
         private int sugarCubePref;
         private int tempPref;
+        public bool makeDecisionToPurchase;
         
            
         public int iceCubePreference { get; set; }
@@ -77,15 +78,21 @@ namespace LemonadeStand
 
         public bool MakeDecisionToPurchaseLemonade()
         {
+<<<<<<< HEAD
             if (weather.dailyTemperature >= TemperaturePreference && recipe.pricePerCup <= CostPerCupPreference && recipe.amountOfIceCubes >= iceCubePreference && recipe.amountOfLemons >= lemonPreference && recipe.amountOfSugar >= sugarCubePref )
+=======
+
+            if (weather.dailyTemperature >= TemperaturePreference && DecideWeatherCondition() && recipe.pricePerCup <= CostPerCupPreference && recipe.amountOfIceCubes >= iceCubePreference && recipe.amountOfLemons >= lemonPreference && recipe.amountOfSugar >= sugarCubePref )
+>>>>>>> 9e1ff6f3f08c547722af4c62d695f084b6b6d804
             {
+                
                 return true;
+
             }
             else 
             {
                 return false;
             }
-
 
 
         }
