@@ -26,8 +26,7 @@ namespace LemonadeStand
             player1 = new Player("Steve");
             days = new List<Day>();
             groceryStore = new Store(player1);
-            this.store = new Store(player1);
-            this.recipe = new Recipe();
+
             AddNewDayToList();
            // this.customer = new Customer(recipe, weather);
         }
@@ -45,25 +44,17 @@ namespace LemonadeStand
         public void NewDay()
         {
             List<int> days = new List<int>() { 0, 7 };
-            foreach ( int day in days)
+            foreach (int day in days)
             {
                 Console.WriteLine("$ Day {0}", days);
             }
             //days += 1;
+        }
 
-        public Store groceryStore;
         int dayCounter { get; set; } = 7;
      
         
-        public Game()
-        {
-            player1 = new Player("Paul");
-            days = new List<Day>();
-            groceryStore = new Store(player1);
-            
 
-
-        }
 
         public void RunGame()
         {
