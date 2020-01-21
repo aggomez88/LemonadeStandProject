@@ -28,11 +28,7 @@ namespace LemonadeStand
             Console.WriteLine("Welcome to Lemonade Stand.");
 
             PlayerMenu();
-            
-
-
-
-            
+                 
             
         }
 

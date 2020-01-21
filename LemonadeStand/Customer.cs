@@ -63,6 +63,7 @@ namespace LemonadeStand
             TemperaturePreference = random.Next(55, 95);  // Set method on the TemperaturePreference Property
             CostPerCupPreference = random.NextDouble();   // will pick a number between .00 and 1.00 only
             RecepiePreference();
+            MakeDecisionToPurchaseLemonade();
         }
 
         public void RecepiePreference()
@@ -74,32 +75,9 @@ namespace LemonadeStand
 
         }
 
-        private bool DecideWeatherCondition()
-        {
-            Random random = new Random();
-            int randomValue = random.Next(1, 100);
-            if (weather.dailyCondition == "Sunny" && randomValue > 10)
-            {
-                    return true;
-            }
-            else if (weather.dailyCondition == "Rainy" && randomValue < 30)
-            {
-                    return true;
-            }
-            else if (weather.dailyCondition == "cloudy" && randomValue >= 50)
-            {
-                    return true;
-            }
-            else
-            {
-                    return false;
-            }
-        }
-        
-
         public bool MakeDecisionToPurchaseLemonade()
         {
-            if (weather.dailyTemperature >= TemperaturePreference && DecideWeatherCondition() && recipe.pricePerCup <= CostPerCupPreference && recipe.amountOfIceCubes >= iceCubePreference && recipe.amountOfLemons >= lemonPreference && recipe.amountOfSugar >= sugarCubePref )
+            if (weather.dailyTemperature >= TemperaturePreference && recipe.pricePerCup <= CostPerCupPreference && recipe.amountOfIceCubes >= iceCubePreference && recipe.amountOfLemons >= lemonPreference && recipe.amountOfSugar >= sugarCubePref )
             {
                 return true;
             }

@@ -17,7 +17,7 @@ namespace LemonadeStand
             Money = 20;
         }
 
-        // MEMBER METHODS (CAN DO...)
+       
         
 
     }
