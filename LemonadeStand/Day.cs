@@ -12,7 +12,7 @@ namespace LemonadeStand
         public Weather weather;
         public List<Customer> customers;
 
-        public double startingMoney;
+        
 
         // Constructor
         public Day()
@@ -21,22 +21,6 @@ namespace LemonadeStand
             customers = new List<Customer>();
 
         }
-
-
-        public double DailyEarnings(Player player)
-        {
-            double dailyEarnings = player.wallet.Money - startingMoney;
-            return dailyEarnings;
-        }
-        public void EndOfDdayTotal()
-        {
-
-        }
-
-
-
-
-
     }
 
 }

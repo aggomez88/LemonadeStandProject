@@ -14,11 +14,9 @@ namespace LemonadeStand
 
 
         // CONSTRUCTOR
-<<<<<<< HEAD
-        public Pitcher()
-=======
+
         public  Pitcher()
->>>>>>> 5493032cafe2fbb31a954d9d95279337217c99fa
+
         {
             cupsLeftInPitcher = 0;
         }

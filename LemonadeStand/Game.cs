@@ -17,10 +17,12 @@ namespace LemonadeStand
         public Store groceryStore;
         public Store store;
         public Recipe recipe;
-        // public Customer customer;
+        public Customer customer;
         public Weather weather;
-        
-        
+        int dayCounter { get; set; } = 7;
+        public double startingMoney;
+
+
         public Game()
         {
             player1 = new Player("Steve");
@@ -28,7 +30,7 @@ namespace LemonadeStand
             groceryStore = new Store(player1);
 
             AddNewDayToList();
-           // this.customer = new Customer(recipe, weather);
+            this.customer = new Customer(recipe, weather);
         }
 
         public void AddNewDayToList()
@@ -51,11 +53,15 @@ namespace LemonadeStand
             //days += 1;
         }
 
-        int dayCounter { get; set; } = 7;
-     
         
-
-
+        public void CycleDay()
+        {
+            for (int i = 0; i < dayCounter; i++)
+            {
+                days.Add(new Day());
+                Console.WriteLine(i);
+            }
+        }
         public void RunGame()
         {
 
@@ -65,13 +71,6 @@ namespace LemonadeStand
             Console.WriteLine("Welcome to Lemonade Stand.");
 
             PlayerMenu();
-            
-
-
-
-            
-            
-
         }
 
         public void PlayerMenu()
@@ -107,30 +106,30 @@ namespace LemonadeStand
 
             }
         }
-
-
         public double Profits()
         {
-            // double dailyEarnings;
+            double dailyEarnings;
 
-            //double calculateDailyEarnings = DailyEarnings();
-            //double calculateEndOfGameEarnings = calculateDailyEarnings - player1.wallet.Money;
-            //return calculateEndOfGameEarnings;
+            double calculateDailyEarnings = player1.recipe.pricePerCup * customer.makeDecisionToPurchase;
+            double calculateEndOfGameEarnings = calculateDailyEarnings - player1.wallet.Money;
+            return calculateEndOfGameEarnings;
 
             return 0;
 
         }
-        
-        public void CycleDay()
+        public double DailyEarnings()
         {
-            for (int i = 0; i < dayCounter; i++)
+            if (customer.makeDecisionToPurchase == true)
             {
-
-
-
+                player1.wallet.Money += player1.recipe.pricePerCup;
             }
+            //double dailyEarnings = customer.makeDecisionToPurchase * player1.recipe.pricePerCup;
+            //return dailyEarnings;
         }
+        public void EndOfDdayTotal()
+        {
 
+        }
         public void GameOver()
         {
             if ((player1.wallet.Money <= 0) == true || (dayCounter == 0) == true)
