@@ -29,8 +29,38 @@ namespace LemonadeStand
             days = new List<Day>();
             groceryStore = new Store(player1);
 
-            this.customer = new Customer(player1.recipe, weather);
+            //this.customer = new Customer(player1.recipe, weather);
         }
+
+        public void RunGame()
+        {
+            //Welcome message & display rules = COMPLETE
+            //Instantiate day =
+            //Populate customers in day =
+            //Generate weather temp and forecast in day =
+            //Use and/or make recipe to use =
+            //Populate inventory with lemons, ice, sugar, cups =
+            //Player sets price for cup =
+            //Sell lemonade =
+            //Display end of day totals =
+
+            GreetUser();
+            PlayerMenu();
+            for (int i = 0; i < dayCounter; i++)
+            {
+                if (player1.wallet.Money >= 0)
+                {
+                    days.Add(new Day());
+                    //generate customers
+                    //generate weather
+                    groceryStore.RunGroceryShoppingSim();
+                    player1.recipe.DeclareDailyRecipie();
+                    days[i].SellLemonade(player1);
+                    Profits();
+                }
+            }
+        }
+
         public void GreetUser()
         {
             string userInput = Console.ReadLine().ToLower();
@@ -38,7 +68,7 @@ namespace LemonadeStand
             Console.WriteLine("Welcome to your lemonade stand. Here's how it works...");
             Console.WriteLine("You have $20.00 to start.  Go to the store and stock your inventory.");
             Console.WriteLine("Choose how much of each item to add to your recipe and set your price, then go hit the street...Good Luck!");
-            Console.WriteLine("Hit any key to continue...");
+            Console.WriteLine("Hit any ENTER to continue...");
             userInput = Console.ReadLine();
         }
         public void RunSingleDay()//have a method that runs a single day:
@@ -52,35 +82,7 @@ namespace LemonadeStand
 
       
        
-        public void RunGame()
-        {
-                //Welcome message & display rules
-                //Instantiate day
-                //Populate customers in day
-                //Generate weather temp and forecast in day
-                //Use and/or make recipe to use
-                //Populate inventory with lemons, ice, sugar, cups
-                //Player sets price for cup
-                //Sell lemonade
-                //Display end of day totals
-                GreetUser();
-                for (int i = 0; i < dayCounter; i++)
-                {
-                    if (player1.wallet.Money >= 0)
-                    {
-                        days.Add(new Day());
-                        //generate customers
-                        //generate weather
-                        groceryStore.RunGroceryShoppingSim();
-                        player1.recipe.DeclareDailyRecipie();
-                        days[i].SellLemonade(player1);
-                        Profits();
-                    }
-
-                }
-
-
-        }
+        
 
         public void PlayerMenu()
         {
