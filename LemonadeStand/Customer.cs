@@ -76,7 +76,34 @@ namespace LemonadeStand
 
         }
 
+<<<<<<< HEAD
         public bool MakeDecisionToPurchaseLemonade()
+=======
+        private bool DecideWeatherCondition()
+        {
+            Random random = new Random();
+            int randomValue = random.Next(1, 100);
+            if (weather.dailyCondition == "Sunny" && randomValue > 10)
+            {
+                    return true;
+            }
+            else if (weather.dailyCondition == "Rainy" && randomValue < 30)
+            {
+                    return true;
+            }
+            else if (weather.dailyCondition == "cloudy" && randomValue >= 50)
+            {
+                    return true;
+            }
+            else
+            {
+                    return false;
+            }
+        }
+        
+
+        public void MakeDecisionToPurchaseLemonade()
+>>>>>>> bddfdddb920da68b4bd593dcfb9641d3744dc7a1
         {
 <<<<<<< HEAD
             if (weather.dailyTemperature >= TemperaturePreference && recipe.pricePerCup <= CostPerCupPreference && recipe.amountOfIceCubes >= iceCubePreference && recipe.amountOfLemons >= lemonPreference && recipe.amountOfSugar >= sugarCubePref )
@@ -85,17 +112,16 @@ namespace LemonadeStand
             if (weather.dailyTemperature >= TemperaturePreference && DecideWeatherCondition() && recipe.pricePerCup <= CostPerCupPreference && recipe.amountOfIceCubes >= iceCubePreference && recipe.amountOfLemons >= lemonPreference && recipe.amountOfSugar >= sugarCubePref )
 >>>>>>> 9e1ff6f3f08c547722af4c62d695f084b6b6d804
             {
-                
-                return true;
+
+                makeDecisionToPurchase =  true;
 
             }
             else 
             {
-                return false;
+                makeDecisionToPurchase =  false;
             }
-
-
         }
+        
        
         
     }

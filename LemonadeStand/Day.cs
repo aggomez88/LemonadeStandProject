@@ -52,11 +52,36 @@ namespace LemonadeStand
             }
 
         }
+<<<<<<< HEAD
 
 
 
 =======
 >>>>>>> 9e1ff6f3f08c547722af4c62d695f084b6b6d804
+=======
+        public void SellLemonade(Player player)
+        {
+            CustomersDecide();
+            CustomersPurchase(player);
+        }
+        public void CustomersDecide()
+        {
+            for (int i = 0; i < customers.Count; i++)
+            {
+                customers[i].MakeDecisionToPurchaseLemonade();
+            }
+        }
+        public void CustomersPurchase(Player player)
+        {
+            for (int i = 0; i < customers.Count; i++)
+            {
+                if(customers[i].makeDecisionToPurchase == true)
+                {
+                    player.wallet.Money += player.recipe.pricePerCup;
+                }
+            }
+        }
+>>>>>>> bddfdddb920da68b4bd593dcfb9641d3744dc7a1
     }
 
 }
