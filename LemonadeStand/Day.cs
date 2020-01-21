@@ -23,10 +23,9 @@ namespace LemonadeStand
         {
             weather = new Weather();
             customers = new List<Customer>();
-            player = new Player();
+            
             GenerateCustomers();
         }
-<<<<<<< HEAD
 
         public void GenerateCustomers()
         {
@@ -48,17 +47,11 @@ namespace LemonadeStand
 
             for (int i = 0; i < randomValue; i++)
             {
-                customers.Add(new Customer(recipe, weather));
+                customers.Add(new Customer(player.recipe, weather));
             }
 
         }
-<<<<<<< HEAD
 
-
-
-=======
->>>>>>> 9e1ff6f3f08c547722af4c62d695f084b6b6d804
-=======
         public void SellLemonade(Player player)
         {
             CustomersDecide();
@@ -81,7 +74,7 @@ namespace LemonadeStand
                 }
             }
         }
->>>>>>> bddfdddb920da68b4bd593dcfb9641d3744dc7a1
+
     }
 
 }

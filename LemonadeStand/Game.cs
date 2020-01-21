@@ -28,8 +28,6 @@ namespace LemonadeStand
             player1 = new Player("Steve");
             days = new List<Day>();
             groceryStore = new Store(player1);
-
-            AddNewDayToList();
             this.customer = new Customer(player1.recipe, weather);
         }
         public void GreetUser()
@@ -50,133 +48,97 @@ namespace LemonadeStand
             Console.WriteLine(player1.wallet.Money);
         }
 
-        public void AddNewDayToList()
+      
+       
+        public void RunGame()
         {
-            for (int i = 0; i < dayCounter; i++)
-            {
-                days.Add(new Day());
-                Console.WriteLine(i);
-
-<<<<<<< HEAD
-            PlayerMenu();
-                 
-            
-=======
-            }
-        }
-
-        public void NewDay()
-        {
-            List<int> days = new List<int>() { 0, 7 };
-            foreach (int day in days)
-            {
-                Console.WriteLine("$ Day {0}", days);
-            }
-            //days += 1;
-        }
-
-
-        public void CycleDay()
-        {
-            for (int i = 0; i < dayCounter; i++)
-            {
-                days.Add(new Day());
-                Console.WriteLine(i);
-            }
-        }
-        public void RunGame()   
-        {
-            //Welcome message & display rules
-            //Instantiate day
-            //Populate customers in day
-            //Generate weather temp and forecast in day
-            //Use and/or make recipe to use
-            //Populate inventory with lemons, ice, sugar, cups
-            //Player sets price for cup
-            //Sell lemonade
-            //Display end of day totals
-            GreetUser();
-            for (int i = 0; i < dayCounter; i++)
-            {
-                if(player1.wallet.Money >= 0)
+                //Welcome message & display rules
+                //Instantiate day
+                //Populate customers in day
+                //Generate weather temp and forecast in day
+                //Use and/or make recipe to use
+                //Populate inventory with lemons, ice, sugar, cups
+                //Player sets price for cup
+                //Sell lemonade
+                //Display end of day totals
+                GreetUser();
+                for (int i = 0; i < dayCounter; i++)
                 {
-                    days.Add(new Day());
-                    //generate customers
-                    //generate weather
-                    groceryStore.RunGroceryShoppingSim();
-                    player1.recipe.DeclareDailyRecipie();
-                    days[i].SellLemonade(player1);
-                    Profits();
+                    if (player1.wallet.Money >= 0)
+                    {
+                        days.Add(new Day());
+                        //generate customers
+                        //generate weather
+                        groceryStore.RunGroceryShoppingSim();
+                        player1.recipe.DeclareDailyRecipie();
+                        days[i].SellLemonade(player1);
+                        Profits();
+                    }
+
                 }
-                
-            }
-            
-                                                  
 
-            
 
-            PlayerMenu();
->>>>>>> 9e1ff6f3f08c547722af4c62d695f084b6b6d804
         }
 
         public void PlayerMenu()
         {
-            
-            Console.WriteLine("What would you like to do today? Choosing by entering number: \n1) Create a recipe \n2)Go to the store\n 3) Open your stand for the day");
-            string menuInput = Console.ReadLine();
 
-            if (menuInput == "1")
-            {
-                player1.recipe.DeclareDailyRecipie();
-            }
-            else if (menuInput == "2")
-            {
-                groceryStore.RunGroceryShoppingSim();
-            }
-            else if (menuInput == "3")
-            {
-                if (player1.inventory.lemons.Count >= 1 && player1.inventory.sugarCubes.Count >= 1 && player1.inventory.iceCubes.Count >= 1 && player1.inventory.drinkingCups.Count >= 1)
+                Console.WriteLine("What would you like to do today? Choosing by entering number: \n1) Create a recipe \n2)Go to the store\n 3) Open your stand for the day");
+                string menuInput = Console.ReadLine();
+
+                if (menuInput == "1")
                 {
-                    CycleDay();
+                    player1.recipe.DeclareDailyRecipie();
+                }
+                else if (menuInput == "2")
+                {
+                    groceryStore.RunGroceryShoppingSim();
+                }
+                else if (menuInput == "3")
+                {
+                    if (player1.inventory.lemons.Count >= 1 && player1.inventory.sugarCubes.Count >= 1 && player1.inventory.iceCubes.Count >= 1 && player1.inventory.drinkingCups.Count >= 1)
+                    {
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("Your inventory is low, you need to hit the store.");
+                        groceryStore.RunGroceryShoppingSim();
+                    }
+
                 }
                 else
                 {
-                    Console.WriteLine("Your inventory is low, you need to hit the store.");
-                    groceryStore.RunGroceryShoppingSim();
-                }
-                
-            }
-            else
-            {
-                Console.WriteLine("Invalid input, choose number 1, 2 or 3");
+                    Console.WriteLine("Invalid input, choose number 1, 2 or 3");
 
-            }
+                }
         }
+
         public double Profits()
         {
-            double dailyEarnings; //if daily earning
-            
+                double dailyEarnings; //if daily earning
 
-            double calculateDailyEarnings = player1.recipe.pricePerCup * customer.CostPerCupPreference;
-            double calculateEndOfGameEarnings = calculateDailyEarnings - player1.wallet.Money;  //player.wallet.money - 20 (starting money) = FINAL WEEKS EARNINGS
-            return calculateEndOfGameEarnings;
 
-            return 0;
+                double calculateDailyEarnings = player1.recipe.pricePerCup * customer.CostPerCupPreference;
+                double calculateEndOfGameEarnings = calculateDailyEarnings - player1.wallet.Money;  //player.wallet.money - 20 (starting money) = FINAL WEEKS EARNINGS
+                return calculateEndOfGameEarnings;
+
+                return 0;
 
         }
         public double DailyEarnings()
         {
-            if (customer.makeDecisionToPurchase == true)
-            {
-                player1.wallet.Money += player1.recipe.pricePerCup;
-                return 0;
-            }
-            else
-            {
-                return 0;
-            }
-            //double dailyEarnings = customer.makeDecisionToPurchase * player1.recipe.pricePerCup;
-            //return dailyEarnings;
+                if (customer.makeDecisionToPurchase == true)
+                {
+                    player1.wallet.Money += player1.recipe.pricePerCup;
+                    return 0;
+                }
+                else
+                {
+                    return 0;
+                }
+                //double dailyEarnings = customer.makeDecisionToPurchase * player1.recipe.pricePerCup;
+                //return dailyEarnings;
         }
         public void EndOfDdayTotal()
         {
@@ -184,16 +146,16 @@ namespace LemonadeStand
         }
         public void GameOver()
         {
-            if ((player1.wallet.Money <= 0) == true || (dayCounter == 0) == true)
-            {
-                Console.WriteLine("Game Over");
-            }
-            else
-            {
-                RunGame();
-            }
+             if ((player1.wallet.Money <= 0) == true || (dayCounter == 0) == true)
+             {
+                   Console.WriteLine("Game Over");
+             }
+             else
+             {
+                  RunGame();
+             }
 
+            
         }
-    }
-
-}
+    } 
+} 

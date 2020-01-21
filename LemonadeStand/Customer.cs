@@ -76,9 +76,7 @@ namespace LemonadeStand
 
         }
 
-<<<<<<< HEAD
-        public bool MakeDecisionToPurchaseLemonade()
-=======
+
         private bool DecideWeatherCondition()
         {
             Random random = new Random();
@@ -103,14 +101,13 @@ namespace LemonadeStand
         
 
         public void MakeDecisionToPurchaseLemonade()
->>>>>>> bddfdddb920da68b4bd593dcfb9641d3744dc7a1
         {
-<<<<<<< HEAD
+
             if (weather.dailyTemperature >= TemperaturePreference && recipe.pricePerCup <= CostPerCupPreference && recipe.amountOfIceCubes >= iceCubePreference && recipe.amountOfLemons >= lemonPreference && recipe.amountOfSugar >= sugarCubePref )
-=======
+
 
             if (weather.dailyTemperature >= TemperaturePreference && DecideWeatherCondition() && recipe.pricePerCup <= CostPerCupPreference && recipe.amountOfIceCubes >= iceCubePreference && recipe.amountOfLemons >= lemonPreference && recipe.amountOfSugar >= sugarCubePref )
->>>>>>> 9e1ff6f3f08c547722af4c62d695f084b6b6d804
+
             {
 
                 makeDecisionToPurchase =  true;
