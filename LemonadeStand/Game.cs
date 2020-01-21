@@ -29,7 +29,7 @@ namespace LemonadeStand
             days = new List<Day>();
             groceryStore = new Store(player1);
 
-            AddNewDayToList();
+            
             this.customer = new Customer(player1.recipe, weather);
         }
         public void GreetUser()
@@ -50,35 +50,7 @@ namespace LemonadeStand
             Console.WriteLine(player1.wallet.Money);
         }
 
-        public void AddNewDayToList()
-        {
-            for (int i = 0; i < dayCounter; i++)
-            {
-                days.Add(new Day());
-                Console.WriteLine(i);
-
-            }
-        }
-
-        public void NewDay()
-        {
-            List<int> days = new List<int>() { 0, 7 };
-            foreach (int day in days)
-            {
-                Console.WriteLine("$ Day {0}", days);
-            }
-            //days += 1;
-        }
-
-
-        public void CycleDay()
-        {
-            for (int i = 0; i < dayCounter; i++)
-            {
-                days.Add(new Day());
-                Console.WriteLine(i);
-            }
-        }
+       
         public void RunGame()   
         {
             //Welcome message & display rules
@@ -105,12 +77,6 @@ namespace LemonadeStand
                 }
                 
             }
-            
-                                                  
-
-            
-
-            PlayerMenu();
         }
 
         public void PlayerMenu()
@@ -131,7 +97,7 @@ namespace LemonadeStand
             {
                 if (player1.inventory.lemons.Count >= 1 && player1.inventory.sugarCubes.Count >= 1 && player1.inventory.iceCubes.Count >= 1 && player1.inventory.drinkingCups.Count >= 1)
                 {
-                    CycleDay();
+                    
                 }
                 else
                 {

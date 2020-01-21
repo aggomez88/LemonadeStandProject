@@ -43,6 +43,16 @@ namespace LemonadeStand
                 }
             }
         }
+        public void GenerateCustomers()
+        {
+            for (int i = 0; i < customers.Count; i++)
+            {
+                if (customers[i].)
+                {
+
+                }
+            }
+        }
     }
 
 }

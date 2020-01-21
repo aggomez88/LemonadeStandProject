@@ -75,7 +75,7 @@ namespace LemonadeStand
 
         }
 
-        private bool DecideWeatherCondition()
+        public bool DecideWeatherCondition()
         {
             Random random = new Random();
             int randomValue = random.Next(1, 100);
